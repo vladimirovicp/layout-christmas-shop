@@ -1,0 +1,97 @@
+.cta {
+  .container {
+    height: 668px;
+    padding: 60px 82px;
+    background-image: url(../assets/img/bg-cta.png);
+    background-position: top center;
+    background-size: 1440px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  &__wrapper {
+    width: 426px;
+    border-radius: 0 0 20px 20px;
+    padding: 100px 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    color: $static-white;
+  }
+
+  &__slogan {
+    padding-bottom: 8px;
+  }
+
+  .btn__wrapper {
+    margin-bottom: 20px;
+  }
+}
+
+.timer {
+  display: flex;
+  width: 344px;
+  height: 72px;
+  background-color: $static-white-40;
+  padding: 8px 12px;
+  margin: 0 auto;
+  border-radius: 20px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+
+    position: relative;
+
+    &:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 20px;
+      width: 1px;
+      background-color: $static-white-40;
+      right: 0;
+      top: 16px;
+    }
+  }
+  &__text {
+    @include header4;
+    text-transform: uppercase;
+  }
+
+  &__number {
+    @include header2;
+  }
+
+  &__text,
+  &__number {
+    color: $static-white;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta {
+    .container {
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .cta {
+    .container {
+      height: 704px;
+      padding: 60px 8px;
+      background-position: bottom center;
+      background-size: 1520px;
+    }
+
+    &__wrapper {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.gifts {
+  .container {
+    padding: 60px 82px;
+    background-image: url(../assets/img/bg-gifts.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+
+  &__title {
+    width: 426px;
+    color: $static-white;
+    text-align: center;
+    margin: 0;
+  }
+
+  &__tabs {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    gap: 8px;
+  }
+
+  &__btn {
+    color: $static-white;
+    @include action_small;
+    letter-spacing: 1px;
+    padding: 12px 20px;
+
+    background-color: transparent;
+    border-radius: 12px;
+    border: 0;
+
+    &._active {
+      background-color: $static-white-20;
+      cursor: default;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .gifts {
+    &__btn {
+      transition: background-color 0.5s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background-color: $static-white-20;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .gifts {
+    .container {
+      padding: 60px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .gifts {
+    .container {
+      padding: 60px 8px;
+    }
+    &__tabs {
+      gap: unset;
+    }
+
+    &__card {
+      &_info {
+        padding-bottom: 12px;
+      }
+    }
+
+    &__btn {
+      padding: 12px 8px;
+    }
+  }
+}

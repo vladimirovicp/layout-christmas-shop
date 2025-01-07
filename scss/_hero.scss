@@ -1,0 +1,69 @@
+.hero {
+  .container {
+    height: 524px;
+    background-image: url(../assets/img/bg-hero.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $static-white;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__wrapper {
+    width: 430px;
+    text-align: center;
+  }
+
+  &__slogan {
+    @include caption;
+  }
+}
+
+.btn {
+  color: $static-white;
+  @include action_small;
+  display: inline-flex;
+  border-radius: 20px;
+  padding: 20px 32px;
+  &__black {
+    color: $static-white;
+    background-color: $dark;
+  }
+
+  &__wrapper {
+    margin-bottom: 12px;
+  }
+}
+
+@media (hover: hover) {
+  .btn {
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    &__black {
+      &:hover {
+        background-color: $static-white;
+        color: $dark;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero .container {
+    background-size: 1250px;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  .hero {
+    .container {
+      height: 572px;
+      background-size: 1360px;
+    }
+  }
+}

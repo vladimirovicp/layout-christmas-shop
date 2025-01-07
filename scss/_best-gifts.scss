@@ -1,0 +1,95 @@
+.best-gifts {
+  .container {
+    background-image: url(../assets/img/bg-best-gifts.png);
+    padding: 60px 82px;
+  }
+
+  &__slogan {
+    color: $static-white;
+    @include caption;
+    text-align: center;
+  }
+
+  &__title {
+    color: $static-white;
+    text-align: center;
+    margin: 12px 0 20px;
+  }
+}
+
+.gifts {
+  &__cards {
+    display: flex;
+    // justify-content: space-between;
+    justify-content: center;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__card {
+    width: 310px;
+    height: 342px;
+    background-color: #ecf3f8;
+    border-radius: 20px;
+
+    &_img {
+      width: 310px;
+      height: 230px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &_wrapper {
+      background-color: $static-white;
+      height: 112px;
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    &_info {
+      color: $tag-purple;
+      padding-bottom: 8px;
+      margin: 0;
+    }
+
+    &_title {
+      color: $dark;
+      margin: 0;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .gifts {
+    &__card {
+      cursor: pointer;
+      &_title {
+        transition: color 0.4s ease-in-out;
+      }
+      &:hover {
+        .gifts__card_title {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .best-gifts {
+    .container {
+      padding: 60px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .best-gifts {
+    .container {
+      padding: 60px 20px;
+    }
+  }
+}

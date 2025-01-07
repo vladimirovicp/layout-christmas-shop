@@ -1,0 +1,142 @@
+.modal {
+  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.5s all;
+  z-index: 100;
+
+  &__content {
+    
+    width: 400px;
+    //height: 514px;
+    background-color: #ecf3f8;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img {
+    height: 230px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      height: 300px;
+      position: absolute;
+      left: -50%;
+      transform: translateX(50%);
+      top: -30px;
+    }
+  }
+
+  &.active {
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.5s all;
+  }
+
+  &__wrapper {
+    height: 284px;
+    padding: 20px;
+    background-color: $static-white;
+  }
+
+  &__close {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    z-index: 5;
+  }
+
+  &-gifts {
+    &__category {
+      @include header4();
+      color: $tag-purple;
+      padding-bottom: 8px;
+      margin: 0;
+    }
+    &__name {
+      @include header3();
+      padding-bottom: 8px;
+    }
+    &__description {
+    }
+
+    &__powers {
+      padding-top: 20px;
+    }
+  }
+}
+
+.powers {
+  &__title {
+    @include header4();
+    padding-bottom: 8px;
+  }
+  &__cards {
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    height: 24px;
+  }
+
+  &__name {
+    width: 182px;
+  }
+  &__mark {
+    width: 42px;
+  }
+
+  &__snowflakes {
+    width: 112px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__snowflake {
+    height: 16px;
+    width: 16px;
+    background-image: url(../assets/img/snowflake2.svg);
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    &._action {
+      opacity: 1;
+    }
+  }
+}
+
+@media( hover:hover){
+
+  .modal {
+    &__close {
+      cursor: pointer;
+    }
+
+  }
+}
+
+@media (max-width: 576px) {
+  .modal {
+    &__content {
+      width: 364px;
+    }  
+
+    &__img{
+      img{
+        height: 270px;
+        top: -25px;
+      }
+    }
+  }
+
+  .powers{
+    &__name{
+      width: 148px;
+    }
+  }
+}

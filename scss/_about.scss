@@ -1,0 +1,89 @@
+.about {
+  .container {
+    background-image: url(../assets/img/bg-about.png);
+    background-color: $primary;
+    padding: 60px 82px;
+  }
+  &__wrapper {
+    display: flex;
+    background-color: $static-white;
+    border-radius: 20px;
+    justify-content: space-between;
+  }
+
+  &__img {
+    width: 638px;
+    height: 528px;
+    img {
+      width: 100%;
+      // height: auto;
+      height: 100%;
+      border-radius: 20px;
+      object-fit: none;
+    }
+  }
+
+  &__info {
+    padding: 160px 60px 0;
+    width: 540px;
+  }
+
+  &__slogan {
+    color: $primary;
+    @include caption;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about {
+    .container {
+      padding: 60px 8px;
+    }
+
+    &__info {
+      padding: 106px 60px 0;
+      width: 50%;
+    }
+
+    &__img {
+      width: 50%;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+  }
+}
+
+@media (max-width: 576px) {
+  .about {
+    .container {
+      background-image: unset;
+    }
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__info,
+    &__img {
+      width: 100%;
+    }
+
+    &__info {
+      padding: 60px 20px;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    &__img {
+      padding: 0;
+    }
+  }
+}

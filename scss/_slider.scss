@@ -1,0 +1,111 @@
+.slider {
+  .container {
+    background-image: url(../assets/img/bg-slider.png);
+    background-color: $primary;
+    overflow: hidden;
+    padding: 60px 82px;
+  }
+
+  &__slogan {
+    color: $static-white;
+    @include caption;
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: 12px;
+    text-align: center;
+    color: $static-white;
+  }
+
+  &__items {
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__text {
+    color: $static-white;
+    @include slider;
+  }
+
+  &__image {
+    width: 200px;
+    height: 200px;
+    img {
+      border-radius: 20px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+
+  &__prev,
+  &__next {
+    border: 1px solid $static-white;
+    width: 56px;
+    height: 56px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      path {
+        stroke: $static-white;
+      }
+    }
+
+    &._disabled {
+      border: 1px solid $static-white-40;
+      cursor: default;
+      svg {
+        path {
+          stroke: $static-white-40;
+        }
+      }
+    }
+  }
+
+  &__prev {
+  }
+
+  &__next {
+  }
+}
+
+@media (hover: hover) {
+  .slider {
+    &__prev:not(._disabled),
+    &__next:not(._disabled) {
+      transition: background-color 0.4s ease-in-out, stroke 0.4s ease-in-out;
+      &:hover {
+        background-color: $static-white;
+        svg {
+          path {
+            stroke: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .slider .container {
+    padding: 60px 8px;
+  }
+}

@@ -1,0 +1,44 @@
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 150%;
+  letter-spacing: 5.76px;
+  //5% от 12px = 12px * 0.05 = 0.6px
+  // 18% от 32px = 32px * 0.18 = 5,76
+  margin: 12px 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 152%;
+  letter-spacing: 3.84px; //16%
+  margin: 20px 0;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 152%;
+  letter-spacing: 1.28px; //8%
+}
+
+h4 {
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0.6px; //5%
+}
+
+.color__tag-green {
+  color: $tag-green !important;
+}
+
+.color__tag-pink {
+  color: $tag-pink !important;
+}
